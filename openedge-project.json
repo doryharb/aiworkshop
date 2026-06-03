@@ -25,12 +25,14 @@
       "path": "${DLC}\/gui"
     }
   ],
-  "dbConnections": [{
-    "name": "sp2k",
-    "connect": "-db db/sports2000 -ld sp2k",
-    "schemaFile": "dump/sports2000.df",
-    "aliases": [
-      "sports"
-    ]
-  }]
+  "dbConnections": [
+    {
+      "name": "sp2k",
+      "connect": "-db e:/workspace/ProjectGengar/db/sports2000 -ld sp2k",
+      "schemaFile": "e:/workspace/ProjectGengar/dump/sports2000.df",
+      "aliases": [
+        "sports"
+      ]
+    }
+  ]
 }
