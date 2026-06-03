@@ -1,0 +1,76 @@
+ADD SEQUENCE "NextCustNum"
+  INITIAL 1000
+  INCREMENT 5
+  CYCLE-ON-LIMIT no
+  MIN-VAL 1000
+
+ADD SEQUENCE "NextInvNum"
+  INITIAL 1000
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+  MIN-VAL 1000
+
+ADD SEQUENCE "NextOrdNum"
+  INITIAL 1000
+  INCREMENT 5
+  CYCLE-ON-LIMIT no
+  MIN-VAL 1000
+
+ADD SEQUENCE "NextItemNum"
+  INITIAL 100
+  INCREMENT 10
+  CYCLE-ON-LIMIT no
+  MIN-VAL 100
+
+ADD SEQUENCE "NextRefNum"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+  MIN-VAL 1
+
+ADD SEQUENCE "NextVisitor"
+  INITIAL 1000
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+  MIN-VAL 1000
+
+ADD TABLE "Benefits"
+  AREA "Employee"
+  DESCRIPTION "The benefits table contains employee benefits."
+  DUMP-NAME "benefits"
+
+ADD FIELD "EmpNum" OF "Benefits" AS integer 
+  FORMAT "zzzzzzzzz9"
+  INITIAL "0"
+  LABEL "Emp No"
+  POSITION 2
+  MAX-WIDTH 4
+  VALEXP "CAN-FIND(employee OF benefits)"
+  VALMSG "Employee must exist."
+  HELP "Please enter the Emp Number"
+  ORDER 10
+
+ADD TABLE "Customer"
+  AREA "Cust_Data"
+  DESCRIPTION "The customer table contains customer  information including  balance and address."
+  DUMP-NAME "customer"
+
+ADD FIELD "CustNum" OF "Customer" AS integer 
+  FORMAT ">>>>9"
+  INITIAL "0"
+  LABEL "Cust Num"
+  POSITION 2
+  MAX-WIDTH 4
+  VALEXP "custnum > 0"
+  VALMSG "Customer number must be greater than zero"
+  HELP "Please enter a customer number."
+  ORDER 10
+
+ADD FIELD "Name" OF "Customer" AS character 
+  FORMAT "x(30)"
+  INITIAL ""
+  LABEL "Name"
+  POSITION 3
+  MAX-WIDTH 60
+  HELP "Please enter a name."
+  ORDER 30
